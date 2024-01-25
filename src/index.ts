@@ -1,7 +1,7 @@
 // @ts-check
 
 class Vehicle {
-  status: "started" | "stopped";
+  status?: "started" | "stopped";
   make: string;
   model: string;
   wheels: number;
@@ -10,7 +10,6 @@ class Vehicle {
     this.make = make;
     this.model = model;
     this.wheels = wheels;
-    this.status = "stopped";
   }
   start() {
     this.status = "started";
@@ -41,7 +40,6 @@ function printStatus(vehicle: Vehicle) {
 }
 
 class NCycle<T> {
-  status: "started" | "stopped";
   make: T | T[];
   model: T | T[];
   wheels: number;
@@ -50,7 +48,6 @@ class NCycle<T> {
     this.make = make;
     this.model = model;
     this.wheels = wheels;
-    this.status = "stopped";
   }
   print(parameter: number = 0) {
     if (!Array.isArray(this.make) && !Array.isArray(this.model)) {
